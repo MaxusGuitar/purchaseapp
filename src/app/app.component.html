@@ -1,3 +1,23 @@
+<div class="flexbox">
+  <div class="right_div">
+    <div [class.isredbox]="isRed" class="div"></div>
+    <div [class.isredbox]="!isRed" class="div"></div>
+    <input type="checkbox" [(ngModel)]="isRed" />
+  </div>
+  <div class="right_div">
+    <div
+      [style.background-color]="!isGreen ? 'red' : 'green'"
+      class="div"
+    ></div>
+    <div [style.background-color]="isGreen ? 'red' : 'green'" class="div"></div>
+    <input type="checkbox" [(ngModel)]="isGreen" />
+  </div>
+  <div class="right_div">
+    <child-comp [userName]="name" [userAge]="age"></child-comp>
+    <input type="text" [(ngModel)]="name" />
+    <input type="number" [(ngModel)]="age" />
+  </div>
+</div>
 <div class="page-header">
   <h1>Список покупок</h1>
 </div>

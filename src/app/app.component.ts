@@ -18,6 +18,12 @@ class Item {
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
+  isRed = false;
+  isGreen = false;
+
+  name: string = "Tom";
+  age: number = 24;
+
   text: string = "";
   price: number = 0;
 
