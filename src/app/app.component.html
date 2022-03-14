@@ -17,6 +17,10 @@
     <input type="text" [(ngModel)]="name" />
     <input type="number" [(ngModel)]="age" />
   </div>
+  <div class="right_div">
+    <h2>Количество кликов: {{ clicks }}</h2>
+    <prechild-comp (onChanged)="onChanged($event)"></prechild-comp>
+  </div>
 </div>
 <div class="page-header">
   <h1>Список покупок</h1>
@@ -62,4 +66,21 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div class="flexbox">
+  <div class="right_div">
+    <simple-comp [newname]="newname"></simple-comp>
+    <input type="text" [(ngModel)]="newname" />
+    <input type="number" [(ngModel)]="newage" />
+  </div>
+  <div class="right_div">
+    <p #userName2>{{ newnameagain }}</p>
+    <!--Тут показана шаблонная переменная (действие показано в работе приложения)-->
+    <p>{{ userName2.textContent }}</p>
+    <input type="text" [(ngModel)]="newnameagain" />
+  </div>
+  <div class="right_div">
+    <h1>AppModule</h1>
+    <data-comp></data-comp>
+  </div>
 </div>
