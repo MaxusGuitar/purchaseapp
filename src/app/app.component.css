@@ -27,3 +27,16 @@ p {
 h2 {
   color: #333;
 }
+
+.verdanaFont {
+  font-size: 13px;
+  font-family: Verdana;
+}
+.segoePrintFont {
+  font-size: 14px;
+  font-family: "Segoe Print";
+}
+
+.invisible {
+  display: none;
+}

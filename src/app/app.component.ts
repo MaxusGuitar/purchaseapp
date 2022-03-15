@@ -70,4 +70,21 @@ export class AppComponent implements OnChanges {
   }
 
   newnameagain: string = "Max";
+
+  visibility: boolean = true;
+  // переключаем переменную, то-есть при клике на кнопку будет добавляться класс и убираться повторно
+  toggle() {
+    this.visibility = !this.visibility;
+  }
+
+  condition: boolean = true;
+
+  toggle2() {
+    this.condition = !this.condition;
+  }
+
+  condition2: boolean = true;
+  toggle3() {
+    this.condition2 = !this.condition2;
+  }
 }

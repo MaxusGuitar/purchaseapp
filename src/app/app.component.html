@@ -21,6 +21,16 @@
     <h2>Количество кликов: {{ clicks }}</h2>
     <prechild-comp (onChanged)="onChanged($event)"></prechild-comp>
   </div>
+  <div class="right_div">
+    <p *ngIf="condition">Привет мир</p>
+    <p *ngIf="!condition">Пока мир</p>
+    <button (click)="toggle2()">Toggle</button>
+  </div>
+  <div class="right_div">
+    <p *while="condition2">Первый параграф</p>
+    <p *while="!condition2">Второй параграф</p>
+    <button (click)="toggle3()">Toggle</button>
+  </div>
 </div>
 <div class="page-header">
   <h1>Список покупок</h1>
@@ -83,4 +93,20 @@
     <h1>AppModule</h1>
     <data-comp></data-comp>
   </div>
+  <div
+    [class.invisible]="visibility"
+    class="right_div"
+    [ngStyle]="{ 'font-size': '13px', 'font-family': 'Verdana' }"
+  >
+    <!--Показано как можно с помощью директивы ngStyle прописывать стили-->
+    <h1>Hello Angular 13</h1>
+    <p
+      bold="28px"
+      defaultSize="14px"
+      [ngStyle]="{ 'font-size': '14px', 'font-family': 'Segoe Print' }"
+    >
+      Angular 13 представляет модульную архитектуру приложения
+    </p>
+  </div>
+  <button (click)="toggle()">Toggle</button>
 </div>

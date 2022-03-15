@@ -6,6 +6,8 @@ import { ChildComponent } from "./child.component";
 import { PreChildComponent } from "./prechild.component";
 import { SimpleComponent } from "./simple.component";
 import { DataModule } from "./data/data.module";
+import { BoldDirective } from "./bold.directive";
+import { WhileDirective } from "./while.directive";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, DataModule],
@@ -14,6 +16,8 @@ import { DataModule } from "./data/data.module";
     ChildComponent,
     PreChildComponent,
     SimpleComponent,
+    BoldDirective,
+    WhileDirective,
   ],
   bootstrap: [AppComponent],
 })
