@@ -8,6 +8,7 @@ import { SimpleComponent } from "./simple.component";
 import { DataModule } from "./data/data.module";
 import { BoldDirective } from "./bold.directive";
 import { WhileDirective } from "./while.directive";
+import { NewComponent } from "./new.component";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, DataModule],
@@ -18,6 +19,7 @@ import { WhileDirective } from "./while.directive";
     SimpleComponent,
     BoldDirective,
     WhileDirective,
+    NewComponent,
   ],
   bootstrap: [AppComponent],
 })

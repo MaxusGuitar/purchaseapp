@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class DataService {\n  constructor() {\n    this.data = [\"Apple iPhone XR\", \"Samsung Galaxy S9\", \"Nokia 9\"];\n  }\n\n  getData() {\n    return this.data;\n  }\n\n  addData(name) {\n    this.data.push(name);\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
