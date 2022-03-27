@@ -40,3 +40,6 @@ h2 {
 .invisible {
   display: none;
 }
+.form-control {
+  width: 200px;
+}

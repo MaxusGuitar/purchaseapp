@@ -1,7 +1,7 @@
 import { Injectable, Optional } from "@angular/core";
 import { LogService } from "./log.service";
 
-@Injectable({ providedIn: "root" }) // root - корневой уровень действия, что бы не добавлять DataService в провайдеры "newcomponent"
+@Injectable() // root - корневой уровень действия
 export class DataService {
   private data: string[] = ["Apple iPhone XR", "Samsung Galaxy S9", "Nokia 9"];
   constructor(@Optional() private logService: LogService) {}

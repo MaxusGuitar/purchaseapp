@@ -15,7 +15,7 @@ import { LogService } from "./log.service";
       </tr>
     </table>
   </div>`,
-  providers: [LogService],
+  providers: [LogService, DataService],
 })
 export class NewComponent {
   items2: string[] = [];
