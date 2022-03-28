@@ -1,4 +1,5 @@
 import { Component, OnChanges, SimpleChanges } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 class Item {
   purchase: string;
@@ -86,5 +87,13 @@ export class AppComponent implements OnChanges {
   condition2: boolean = true;
   toggle3() {
     this.condition2 = !this.condition2;
+  }
+
+  name5: string = "";
+  email3: string = "";
+  phone3: string = "";
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 }

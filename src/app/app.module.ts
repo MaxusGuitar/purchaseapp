@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { ChildComponent } from "./child.component";
 import { PreChildComponent } from "./prechild.component";
@@ -11,9 +11,10 @@ import { WhileDirective } from "./while.directive";
 import { NewComponent } from "./new.component";
 import { OneElseComp } from "./else.component";
 import { TwoComponent } from "./two.component";
+import { FormComponent } from "./form.component";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, DataModule],
+  imports: [BrowserModule, FormsModule, DataModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     ChildComponent,
@@ -24,6 +25,7 @@ import { TwoComponent } from "./two.component";
     NewComponent,
     OneElseComp,
     TwoComponent,
+    FormComponent,
   ],
   bootstrap: [AppComponent],
 })
