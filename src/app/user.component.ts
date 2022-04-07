@@ -4,22 +4,22 @@ import { User } from "./user";
 
 @Component({
   selector: "user-app",
-  template: `<ul>
-    <li *ngFor="let user of users">
-      <p>Имя пользователя: {{ user?.name6 }}</p>
-      <p>Возраст пользователя: {{ user?.age6 }}</p>
-    </li>
-  </ul>`,
+  template: `<div>{{ this.httpService.errorMessage }}</div>
+    <!--тут выводится ошибка-->
+    <ul>
+      <li *ngFor="let user of users">
+        <p>Имя пользователя: {{ user?.name }}</p>
+        <p>Возраст пользователя: {{ user?.age }}</p>
+      </li>
+    </ul>`,
   providers: [HttpService],
 })
-export class AppComponent implements OnInit {
+export class UserComponent implements OnInit {
   users: User[] = [];
-
-  constructor(private httpService: HttpService) {}
+  error: any;
+  constructor(public httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService
-      .getData()
-      .subscribe((data: any) => (this.users = data["userList"]));
+    this.httpService.getUsers().subscribe((data) => (this.users = data));
   }
 }
