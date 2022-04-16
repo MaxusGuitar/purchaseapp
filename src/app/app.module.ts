@@ -17,6 +17,7 @@ import { OneElseComp } from "./else.component";
 import { TwoComponent } from "./two.component";
 import { FormComponent } from "./form.component";
 import { UserComponent } from "./user.component";
+import { AppHttp2 } from "./http.component";
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { UserComponent } from "./user.component";
     TwoComponent,
     FormComponent,
     UserComponent,
+    AppHttp2,
   ],
   exports: [],
   bootstrap: [AppComponent],
