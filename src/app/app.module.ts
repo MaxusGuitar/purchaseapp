@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { Routes, RouterModule } from "@angular/router";
+import { APP_BASE_HREF } from "@angular/common";
 
 import { DataModule } from "./data/data.module";
 
@@ -19,6 +21,17 @@ import { FormComponent } from "./form.component";
 import { UserComponent } from "./user.component";
 import { AppHttp2 } from "./http.component";
 
+import { AboutComponent } from "./pages/about.component";
+import { HomeComponent } from "./pages/home.component";
+import { NotFoundComponent } from "./pages/not-found.component";
+
+// определение маршрутов
+const appRoutes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: "**", redirectTo: "/home" }, //для возврата на главную
+];
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,6 +39,7 @@ import { AppHttp2 } from "./http.component";
     DataModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   declarations: [
     AppComponent,
@@ -40,8 +54,12 @@ import { AppHttp2 } from "./http.component";
     FormComponent,
     UserComponent,
     AppHttp2,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent,
   ],
   exports: [],
   bootstrap: [AppComponent],
+  providers: [{ provide: APP_BASE_HREF, useValue: "/home" }], //для работы маршрутов
 })
 export class AppModule {}

@@ -50,3 +50,6 @@ input.ng-touched.ng-invalid {
 input.ng-touched.ng-valid {
   border: solid green 2px;
 }
+.active {
+  color: crimson;
+}
