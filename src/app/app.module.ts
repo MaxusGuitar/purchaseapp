@@ -20,6 +20,11 @@ import { TwoComponent } from "./two.component";
 import { FormComponent } from "./form.component";
 import { UserComponent } from "./user.component";
 import { AppHttp2 } from "./http.component";
+import { ItemComponent } from "./item.component";
+import { AppRouter } from "./app.router";
+import { ItemStatComponent } from "./item.stat.component";
+import { ItemDetailsComponent } from "./item.details.component";
+import { Item2Component } from "./item2.component";
 
 import { AboutComponent } from "./pages/about.component";
 import { HomeComponent } from "./pages/home.component";
@@ -29,7 +34,19 @@ import { NotFoundComponent } from "./pages/not-found.component";
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: AboutComponent },
+  { path: "item/:id", component: ItemComponent },
   { path: "**", redirectTo: "/home" }, //для возврата на главную
+];
+
+const itemRoutes: Routes = [
+  { path: "details", component: ItemDetailsComponent },
+  { path: "stat", component: ItemStatComponent },
+];
+
+const appItemRoutes: Routes = [
+  { path: "item/:id", component: ItemComponent },
+  { path: "item/:id", component: ItemComponent, children: itemRoutes },
+  { path: "", component: HomeComponent },
 ];
 
 @NgModule({
@@ -40,6 +57,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appItemRoutes),
   ],
   declarations: [
     AppComponent,
@@ -57,6 +75,11 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     NotFoundComponent,
+    ItemComponent,
+    AppRouter,
+    ItemDetailsComponent,
+    ItemStatComponent,
+    Item2Component,
   ],
   exports: [],
   bootstrap: [AppComponent],

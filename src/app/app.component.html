@@ -170,7 +170,7 @@
       <http></http>
     </div>
   </div>
-  <nav>
+  <!-- <nav>
     <a
       routerLink=""
       routerLinkActive="active"
@@ -178,6 +178,21 @@
       >Главная</a
     >
     <a routerLink="/about" routerLinkActive="active">О сайте</a>
+    <a
+      [routerLink]="['item', '5']"
+      [queryParams]="{ product: 'phone', price: 200 }"
+      routerLinkActive="active"
+      >item 5</a> -->
+  <!--При определении ссылки на компонент, который использует параметры маршрута, все необходимые параметры заключаются в квадратные скобки-->
+  <!-- <a
+      [routerLink]="['item', '8']"
+      [queryParams]="{ product: 'tablet' }"
+      routerLinkActive="active"
+      >item 8</a
+    >
   </nav>
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet> -->
+  <div class="right_div">
+    <app-rout></app-rout>
+  </div>
 </div>
