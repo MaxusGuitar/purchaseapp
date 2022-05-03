@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class AboutGuard {\n  canActivate(route, state) {\n    return confirm(\"Вы уверены, что хотите перейти?\");\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

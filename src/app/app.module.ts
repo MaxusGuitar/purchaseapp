@@ -25,6 +25,8 @@ import { AppRouter } from "./app.router";
 import { ItemStatComponent } from "./item.stat.component";
 import { ItemDetailsComponent } from "./item.details.component";
 import { Item2Component } from "./item2.component";
+import { AboutGuard } from "./about.guard";
+import { ExitAboutGuard } from "./exit.about.guard";
 
 import { AboutComponent } from "./pages/about.component";
 import { HomeComponent } from "./pages/home.component";
@@ -33,7 +35,12 @@ import { NotFoundComponent } from "./pages/not-found.component";
 // определение маршрутов
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "about", component: AboutComponent },
+  {
+    path: "about",
+    component: AboutComponent,
+    canActivate: [AboutGuard],
+    canDeactivate: [ExitAboutGuard],
+  },
   { path: "item/:id", component: ItemComponent },
   { path: "**", redirectTo: "/home" }, //для возврата на главную
 ];
@@ -83,6 +90,10 @@ const appItemRoutes: Routes = [
   ],
   exports: [],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: "/home" }], //для работы маршрутов
+  providers: [
+    { provide: APP_BASE_HREF, useValue: "/home" },
+    AboutGuard,
+    ExitAboutGuard,
+  ], //для работы маршрутов
 })
 export class AppModule {}
