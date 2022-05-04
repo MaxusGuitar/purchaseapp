@@ -96,4 +96,7 @@ export class AppComponent implements OnChanges {
   onSubmit(form: NgForm) {
     console.log(form);
   }
+
+  x: number = 15.45;
+  users = ["Tom", "Alice", "Sam", "Kate", "Bob"];
 }

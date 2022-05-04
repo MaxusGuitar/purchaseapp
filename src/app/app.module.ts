@@ -27,6 +27,8 @@ import { ItemDetailsComponent } from "./item.details.component";
 import { Item2Component } from "./item2.component";
 import { AboutGuard } from "./about.guard";
 import { ExitAboutGuard } from "./exit.about.guard";
+import { FormatPipe } from "./format.pipe";
+import { JoinPipe } from "./join.pipe";
 
 import { AboutComponent } from "./pages/about.component";
 import { HomeComponent } from "./pages/home.component";
@@ -87,6 +89,8 @@ const appItemRoutes: Routes = [
     ItemDetailsComponent,
     ItemStatComponent,
     Item2Component,
+    FormatPipe,
+    JoinPipe,
   ],
   exports: [],
   bootstrap: [AppComponent],

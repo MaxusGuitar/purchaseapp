@@ -192,8 +192,21 @@
     >
   </nav>
   <router-outlet></router-outlet> -->
-  <div class="right_div">
-    <h1>Маршрутизация в Angular 13</h1>
-    <app-rout></app-rout>
+  <div class="flexbox">
+    <div class="right_div">
+      <h1>Маршрутизация в Angular 13</h1>
+      <app-rout></app-rout>
+    </div>
+    <div class="right_div">
+      <div>
+        Число до форматирования: {{ x }}<br />Число после форматирования:
+        {{ x | format }}
+      </div>
+    </div>
+    <div class="right_div">
+      <div>{{ users | join }}</div>
+      <div>{{ users | join: 1 }}</div>
+      <div>{{ users | join: 1:3 }}</div>
+    </div>
   </div>
 </div>
